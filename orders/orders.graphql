@@ -1,4 +1,5 @@
 type Query {
+  products: [Product]
   orders: [Order]
 }
 

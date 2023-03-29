@@ -1,11 +1,18 @@
 const express = require("express");
+const path = require("path");
 const { buildSchema } = require("graphql");
 const { graphqlHTTP } = require("express-graphql");
 
+const { loadFilesSync } = require("@graphql-tools/load-files");
+
+// makeExecutableSchema is used to combine all of the types and resolvers into a single schema
 const { makeExecutableSchema } = require("@graphql-tools/schema");
 
+// Load all files in the current directory ending in .graphql as String
+const typesArray = loadFilesSync(path.join(__dirname, "./**/*.graphql"));
+
 const schema = makeExecutableSchema({
-  typeDefs: [schemaText],
+  typeDefs: typesArray,
 });
 
 const app = express();
@@ -14,34 +21,8 @@ const app = express();
 
 // root is an object that contains all of the resolvers
 const root = {
-  products: [
-    {
-      id: 1,
-      description: "A great product",
-      reviews: [
-        {
-          rating: 5,
-          comment: "This product is great",
-        },
-      ],
-      price: 9.99,
-      category: "Electronics",
-      orders: [
-        {
-          date: "2021-01-01",
-          subtotal: 9.99,
-          items: [
-            {
-              product: {
-                id: 1,
-              },
-              quantity: 1,
-            },
-          ],
-        },
-      ],
-    },
-  ],
+  products: () => require("./products/products.model"),
+  orders: () => require("./orders/orders.model"),
 };
 
 //MAKE A QUERY TO THE GRAPHQL API
