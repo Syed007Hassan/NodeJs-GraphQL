@@ -2,43 +2,15 @@ const express = require("express");
 const { buildSchema } = require("graphql");
 const { graphqlHTTP } = require("express-graphql");
 
+const { makeExecutableSchema } = require("@graphql-tools/schema");
+
+const schema = makeExecutableSchema({
+  typeDefs: [schemaText],
+});
+
 const app = express();
 
 // buildSchema is a function that takes a string as an argument
-const schema = buildSchema(`
-
- type Query{
-  products: [Product]
-  orders: [Order]
- }
-
- type Product{
-  id: ID!
-  description: String!
-  reviews: [Review]
-  price: Float!
-  category: String!
-  orders: [Order]
- }
-
- type Review{
-  rating: Int!
-  comment: String!
- }
-
- type Order{
-  date: String!
-  subtotal: Float!
-  items: [OrderItem]
-
- }
-
-  type OrderItem{
-    product: Product!
-    quantity: Int!
-  }
-
-`);
 
 // root is an object that contains all of the resolvers
 const root = {
