@@ -1,13 +1,15 @@
 module.exports = [
   {
-    date: "2021-01-01",
-    subtotal: 9.99,
+    date: "2005-05-05",
+    subtotal: 90.22,
     items: [
       {
         product: {
-          id: 1,
+          id: "redshoe",
+          description: "Old Red Shoe",
+          price: 45.11,
         },
-        quantity: 1,
+        quantity: 2,
       },
     ],
   },

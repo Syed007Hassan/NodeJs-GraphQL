@@ -1,27 +1,23 @@
 module.exports = [
   {
-    id: 1,
-    description: "A great product",
+    id: "redshoe",
+    description: "Red Shoe",
+    price: 42.12,
+    reviews: [
+      {
+        rating: 4,
+        comment: "This is a great shoe",
+      },
+    ],
+  },
+  {
+    id: "bluejean",
+    description: "Blue Jeans",
+    price: 55.55,
     reviews: [
       {
         rating: 5,
-        comment: "This product is great",
-      },
-    ],
-    price: 9.99,
-    category: "Electronics",
-    orders: [
-      {
-        date: "2021-01-01",
-        subtotal: 9.99,
-        items: [
-          {
-            product: {
-              id: 1,
-            },
-            quantity: 1,
-          },
-        ],
+        comment: "These are the best jeans",
       },
     ],
   },

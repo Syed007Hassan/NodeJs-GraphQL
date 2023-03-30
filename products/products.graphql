@@ -1,6 +1,5 @@
 type Query {
   products: [Product]
-  orders: [Order]
 }
 
 type Product {
@@ -8,11 +7,9 @@ type Product {
   description: String!
   reviews: [Review]
   price: Float!
-  category: String!
-  orders: [Order]
 }
 
 type Review {
   rating: Int!
-  comment: String!
+  comment: String
 }

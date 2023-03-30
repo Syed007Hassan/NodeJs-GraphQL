@@ -9,10 +9,25 @@ const { loadFilesSync } = require("@graphql-tools/load-files");
 const { makeExecutableSchema } = require("@graphql-tools/schema");
 
 // Load all files in the current directory ending in .graphql as String
-const typesArray = loadFilesSync(path.join(__dirname, "./**/*.graphql"));
+const typesArray = loadFilesSync("**/*", {
+  extensions: ["graphql"],
+});
 
 const schema = makeExecutableSchema({
   typeDefs: typesArray,
+  resolvers: {
+    Query: {
+      products: async (parent) => {
+        console.log("Getting products");
+        const result = await parent.products();
+        return result;
+      },
+      orders: async (parent) => {
+        console.log("Getting orders");
+        const result = await parent.orders();
+      },
+    },
+  },
 });
 
 const app = express();
