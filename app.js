@@ -13,40 +13,21 @@ const typesArray = loadFilesSync("**/*", {
   extensions: ["graphql"],
 });
 
+const resolversArray = loadFilesSync("**/*", {
+  extensions: ["resolvers.js"],
+});
+
 const schema = makeExecutableSchema({
   typeDefs: typesArray,
-  resolvers: {
-    Query: {
-      products: async (parent) => {
-        console.log("Getting products");
-        const result = await parent.products();
-        return result;
-      },
-      orders: async (parent) => {
-        console.log("Getting orders");
-        const result = await parent.orders();
-      },
-    },
-  },
+  resolvers: resolversArray,
 });
 
 const app = express();
-
-// buildSchema is a function that takes a string as an argument
-
-// root is an object that contains all of the resolvers
-const root = {
-  products: () => require("./products/products.model"),
-  orders: () => require("./orders/orders.model"),
-};
-
-//MAKE A QUERY TO THE GRAPHQL API
 
 app.use(
   "/graphql",
   graphqlHTTP({
     schema: schema,
-    rootValue: root,
     graphiql: true,
   })
 );
