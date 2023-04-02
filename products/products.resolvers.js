@@ -1,4 +1,8 @@
-const { getAllProducts, getProductsByPrice } = require("./products.model");
+const {
+  getAllProducts,
+  getProductsByPrice,
+  getProductByID,
+} = require("./products.model");
 
 module.exports = {
   Query: {
@@ -7,6 +11,9 @@ module.exports = {
     },
     productsByPrice: (_, args) => {
       return getProductsByPrice(args.min, args.max);
+    },
+    productByID: (_, args) => {
+      return getProductByID(args.id);
     },
   },
 };
