@@ -38,8 +38,22 @@ const getProductByID = (id) => {
   return products.find((products) => products.id === id);
 };
 
+const addNewProduct = (id, description, price) => {
+  const newProduct = {
+    id,
+    description,
+    price,
+    reviews: [],
+  };
+
+  products.push(newProduct);
+
+  return newProduct;
+};
+
 module.exports = {
   getAllProducts,
   getProductsByPrice,
   getProductByID,
+  addNewProduct,
 };
