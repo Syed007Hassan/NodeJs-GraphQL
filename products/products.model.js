@@ -51,9 +51,25 @@ const addNewProduct = (id, description, price) => {
   return newProduct;
 };
 
+const addNewProductReview = (id, rating, comment) => {
+  const product = products.find((products) => products.id === id);
+
+  if (product) {
+    const newReview = {
+      rating,
+      comment,
+    };
+
+    product.reviews.push(newReview);
+
+    return newReview;
+  }
+};
+
 module.exports = {
   getAllProducts,
   getProductsByPrice,
   getProductByID,
   addNewProduct,
+  addNewProductReview,
 };
