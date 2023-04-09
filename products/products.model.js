@@ -52,17 +52,16 @@ const addNewProduct = (id, description, price) => {
 };
 
 const addNewProductReview = (id, rating, comment) => {
-  const product = products.find((products) => products.id === id);
-
-  if (product) {
-    const newReview = {
+  const matchedProduct = getProductByID(id);
+  if (matchedProduct) {
+    const newProductReview = {
       rating,
       comment,
     };
 
-    product.reviews.push(newReview);
+    matchedProduct.reviews.push(newProductReview);
 
-    return newReview;
+    return matchedProduct;
   }
 };
 
