@@ -1,6 +1,6 @@
 # NodeJs-GraphQL
 
-### Why GraphQL when REST already exit
+### 💥 Why GraphQL when REST already exit?
 <p> GraphQL is a modern API technology that offers several advantages over traditional REST APIs. With GraphQL, clients can retrieve exactly the data they need, no more and no less, with a single request to the server. This reduces the amount of network traffic and minimizes over- and under-fetching of data, which can improve performance and reduce latency.
 
 In addition, GraphQL offers a strongly-typed schema that provides clear documentation of the API and helps ensure that clients and servers can communicate effectively. This can simplify development and maintenance of the API, and can also help catch errors before they are deployed to production.
@@ -10,13 +10,13 @@ GraphQL also enables powerful features like real-time updates and subscriptions,
 While REST APIs have been widely used for many years and are still a viable option, GraphQL offers a more efficient, flexible, and powerful approach to building APIs for modern web and mobile applications.
 </p>
 
-### Access GraphQL Sever
+### 💥 Accessing GraphQL Sever
 
 - GraphQL's server available at ```localhost:<PORT>/graphql```
 
 ![image](https://user-images.githubusercontent.com/104893311/228365764-ac207fae-bc20-4c48-913c-3ff79e7ee858.png)
 
-### Schema Structure
+### 💥 Schema Structure
 
 ```
   products: [
@@ -47,11 +47,11 @@ While REST APIs have been widely used for many years and are still a viable opti
       ],
     },
  ```
-### Query Parameter and Response
+### 💥 Query Parameter and Response
 
 ![image](https://user-images.githubusercontent.com/104893311/228392905-2af31502-5316-4681-b2bd-9054e8ba0594.png)
 
-### Resolvers and Mutations
+### 💥 Resolvers and Mutations
 
 <p> Resolvers and mutations are key components of GraphQL that enable clients to interact with data stored on a server.
 
@@ -124,7 +124,7 @@ module.exports = {
 
 ```
 
-### [Apollo](https://www.apollographql.com/docs/apollo-server/)
+### 💥 [Apollo](https://www.apollographql.com/docs/apollo-server/)
 
 <p>
 
