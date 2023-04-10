@@ -1,7 +1,8 @@
 # NodeJs-GraphQL
 
-### 💥 Why GraphQL when REST already exit?
-<p> GraphQL is a modern API technology that offers several advantages over traditional [REST APIs](https://github.com/Syed007Hassan/My-RESTful-API). With GraphQL, clients can retrieve exactly the data they need, no more and no less, with a single request to the server. This reduces the amount of network traffic and minimizes over- and under-fetching of data, which can improve performance and reduce latency.
+### 💥 Why GraphQL when [REST](https://github.com/Syed007Hassan/My-RESTful-API) already exit?
+<p> GraphQL is a modern API technology that offers several advantages over traditional
+REST APIs.With GraphQL, clients can retrieve exactly the data they need, no more and no less, with a single request to the server. This reduces the amount of network traffic and minimizes over- and under-fetching of data, which can improve performance and reduce latency.
 
 In addition, GraphQL offers a strongly-typed schema that provides clear documentation of the API and helps ensure that clients and servers can communicate effectively. This can simplify development and maintenance of the API, and can also help catch errors before they are deployed to production.
 
